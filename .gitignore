@@ -12,49 +12,39 @@ import pyautogui
 import mouse
 import time
 
-# Open the Start menu
-
-pyautogui.press('win')
-
-time.sleep(1)
-# Type "snip" to search for the Snipping Tool and press Enter
-
-pyautogui.write('snip')
-time.sleep(2)
-
-pyautogui.press('enter')
-
-#  Wait for the Snipping Tool to open
-time.sleep(1)
-
-# Move the mouse pointer ""New" in snipping tool
-pyautogui.moveTo(1413, 651)
-
-# Click the on "New" Button
-pyautogui.click()
-
-time.sleep(1)
-
-# The coordinates of the top-left and bottom-right corners of the square
-x1, y1 = 583, 310 # top-left corner
-x2, y2 = 1393, 847 # bottom-right corner
-
-# Move the mouse cursor to the top-left corner
-pyautogui.moveTo(x1, y1)
-
-# Press the left mouse button and drag to the bottom-right corner
-pyautogui.mouseDown()
-pyautogui.moveTo(x2, y2)
-pyautogui.mouseUp()
-
-# Move the mouse pointer to the "close" sign in snipping tool
-pyautogui.moveTo(1521, 52)
-
-# Click the on "close" Button
-pyautogui.click()
-
-# Move the mouse pointer to the "No" button in snipping tool confirmation overlay
-pyautogui.moveTo(1125, 550)
-
-# Click the on "No" Button
-pyautogui.click()
+def open_start_menu():
+    pyautogui.press('win')
+    time.sleep(1)
+    
+def search_snipping_tool():
+    pyautogui.write('snip')
+    time.sleep(2)
+    pyautogui.press('enter')
+    time.sleep(1)
+    
+def click_new_button():
+    pyautogui.moveTo(1413, 651)
+    pyautogui.click()
+    time.sleep(1)
+    
+def select_area(x1, y1, x2, y2):
+    pyautogui.moveTo(x1, y1)
+    pyautogui.mouseDown()
+    pyautogui.moveTo(x2, y2)
+    pyautogui.mouseUp()
+    
+def click_close_button():
+    pyautogui.moveTo(1521, 52)
+    pyautogui.click()
+    
+def click_no_button():
+    pyautogui.moveTo(1125, 550)
+    pyautogui.click()
+    
+# Usage example
+open_start_menu()
+search_snipping_tool()
+click_new_button()
+select_area(583, 310, 1393, 847)
+click_close_button()
+click_no_button()

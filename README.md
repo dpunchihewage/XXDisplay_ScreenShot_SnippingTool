@@ -1,5 +1,9 @@
-# XXDisplay_ScreenShot_SnippingTool
-This script is useful for automating the process of taking screenshots quickly and efficiently. However, it may need to be modified or customized for different screen resolutions or positions of the Snipping Tool buttons.
-This is a Python script that automates the process of taking a screenshot using the Windows Snipping Tool. The script opens the Start menu, types "snip" to search for the Snipping Tool, and opens it by pressing Enter.
-It then waits for the Snipping Tool to open and moves the mouse pointer to the "New" button, clicks it, and selects a region to capture by dragging the mouse cursor from the top-left to the bottom-right corners of the screen.
-After capturing the screenshot, it moves the mouse pointer to the "close" button in the Snipping Tool, clicks it, and then moves the mouse pointer to the "No" button in the confirmation overlay and clicks it.
+This code automates the process of taking a screenshot using the Snipping Tool in Windows. The functions in this code are:
+open_start_menu(): This function opens the Start menu by pressing the 'win' key using the pyautogui module.
+search_snipping_tool(): This function searches for the Snipping Tool in the Start menu by typing 'snip' and pressing enter.
+click_new_button(): This function clicks the 'New' button in the Snipping Tool.
+select_area(x1, y1, x2, y2): This function selects the area to be captured by moving the mouse cursor to the top-left corner of the area and dragging it to the bottom-right corner using pyautogui.mouseDown() and pyautogui.mouseUp() functions.
+click_close_button(): This function clicks the 'Close' button in the Snipping Tool.
+click_no_button(): This function clicks the 'No' button in the confirmation overlay that appears when closing the Snipping Tool.
+The time.sleep() function is used to introduce pauses in the script to allow time for windows to open and actions to complete.
+The usage example at the bottom calls the functions in the desired order to achieve the process of taking a screenshot using the Snipping Tool in Windows.
